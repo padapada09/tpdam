@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TPDAM</string>
+
+<!--    login-->
+    <string name="loginEmailHint">Ingresá tu correo</string>
+    <string name="loginPasswordHint">Ingresá tu contraseña</string>
+    <string name="loginErrorMsg">El email o la contraseña ingresada son incorrectos</string>
+
+<!--    notes-->
+    <string name="notesAddMoreButton">Nueva nota</string>
+    <string name="notesAddMoreHint">Escribí una nueva nota</string>
+    <string name="notesRemoveButtonText">Eliminar</string>
+    <string name="notesRecorderStopButtonText">Detener</string>
+</resources>
