@@ -6,8 +6,6 @@
     <string name="googleIdSecret">hQJumUIsqq4pSuEEBZN2L6wy</string>
 
 <!--    notes-->
-    <string name="notesAddMoreButton">Nueva nota</string>
-    <string name="notesAddMoreHint">Escribí una nueva nota</string>
-    <string name="notesRemoveButtonText">Eliminar</string>
-    <string name="notesRecorderStopButtonText">Detener</string>
+    <string name="notesAddMoreHint">Nota...</string>
+    <string name="logout">Salir</string>
 </resources>

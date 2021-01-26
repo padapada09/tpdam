@@ -27,11 +27,12 @@
             <ImageView
                 android:id="@+id/backgroundView"
                 android:layout_width="match_parent"
-                android:layout_height="730dp"
+                android:layout_height="wrap_content"
                 android:alpha="0.9"
-                android:scaleType="fitXY"
+                android:scaleType="fitStart"
                 android:visibility="visible"
                 app:srcCompat="@drawable/list_background" />
+
         </LinearLayout>
     </ScrollView>
 
@@ -50,9 +51,10 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
-        android:backgroundTint="#FFFFFF"
         android:elevation="5dp"
+        android:padding="5dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -61,30 +63,35 @@
         <EditText
             android:id="@+id/messageInput"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_height="0dp"
             android:layout_marginEnd="10dp"
             android:layout_weight="1"
+            android:background="@drawable/input_bubble"
             android:ems="10"
             android:hint="@string/notesAddMoreHint"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:minHeight="50dp"
+            android:padding="10dp"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#C6C6C6"
+            app:layout_constraintBottom_toBottomOf="@+id/addButton"
             app:layout_constraintEnd_toStartOf="@+id/addButton"
             app:layout_constraintHorizontal_bias="0.448"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@+id/addButton" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginEnd="16dp"
             android:clickable="true"
             android:focusable="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:maxImageSize="24dp"
             app:srcCompat="@drawable/record_icon" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

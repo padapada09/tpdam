@@ -25,7 +25,13 @@ public class NotesList {
         this.recyclerView.setAdapter(this.adapter);
     };
 
-    public View.OnClickListener onAdd(EditText newNoteInput) {
-        return this.adapter.onAdd(newNoteInput);
+    public View.OnClickListener onAdd(final EditText newNoteInput) {
+        return new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                adapter.onAdd(newNoteInput).onClick(v);
+                recyclerView.scrollToPosition(notes.size() - 1);
+            }
+        };
     }
 }
