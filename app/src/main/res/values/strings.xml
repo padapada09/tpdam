@@ -2,9 +2,8 @@
     <string name="app_name">TPDAM</string>
 
 <!--    login-->
-    <string name="loginEmailHint">Ingresá tu correo</string>
-    <string name="loginPasswordHint">Ingresá tu contraseña</string>
-    <string name="loginErrorMsg">El email o la contraseña ingresada son incorrectos</string>
+    <string name="googleId">233675848686-lv800v3acbtl2eftj2uhntn3838806k6.apps.googleusercontent.com</string>
+    <string name="googleIdSecret">hQJumUIsqq4pSuEEBZN2L6wy</string>
 
 <!--    notes-->
     <string name="notesAddMoreButton">Nueva nota</string>

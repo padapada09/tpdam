@@ -16,9 +16,6 @@ public class Recorder {
 
     public Recorder(AppCompatActivity context) {
         this.context = context;
-        this.backdrop = this.context.findViewById(R.id.recorderBackdrop);
-        this.stopButton = this.context.findViewById(R.id.recorderStopButton);
-        this.stopButton.setOnClickListener(new OnStop());
     };
 
     public void start() {

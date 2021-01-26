@@ -1,16 +1,18 @@
 package utn.frsf.tpdam.activities.Notes;
 
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import utn.frsf.tpdam.R;
 
 public class NotesViewHolder extends RecyclerView.ViewHolder {
     private TextView textView;
-    private Button removeButton;
+    private FloatingActionButton removeButton;
+    private Note note;
 
     public NotesViewHolder(View view) {
         super(view);
@@ -22,7 +24,8 @@ public class NotesViewHolder extends RecyclerView.ViewHolder {
         this.removeButton.setOnClickListener(onRemove);
     }
 
-    public void setText(String text) {
-        this.textView.setText(text);
+    public void setNote(Note note) {
+        this.note = note;
+        this.textView.setText(note.message);
     }
 }

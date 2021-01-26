@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "233675848686",
+    "project_id": "tpdam-35034",
+    "storage_bucket": "tpdam-35034.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:233675848686:android:d062cf0328b257297eacff",
+        "android_client_info": {
+          "package_name": "utn.frsf.tpdam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "233675848686-ss03jdltaar39c3hrol8hq8rkp02bju8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "utn.frsf.tpdam",
+            "certificate_hash": "95a2509c45df74ee87c2ff9dbc6fe8cedd6fabfd"
+          }
+        },
+        {
+          "client_id": "233675848686-lv800v3acbtl2eftj2uhntn3838806k6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7LfvVkUyBYOe4jluZDeoWxR7Zio9Kra0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "233675848686-lv800v3acbtl2eftj2uhntn3838806k6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
