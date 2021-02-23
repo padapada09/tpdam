@@ -6,6 +6,8 @@
     <color name="lightGreen">#6dada1</color>
     <color name="green">#56c7b2</color>
     <color name="darkGreen">#305448</color>
+    <color name="red">#c90000</color>
+    <color name="white">#FFFFFF</color>
 
     <color name="transparentDark">#C9090909</color>
     <color name="transparentWhite">#C9FFFFFF</color>

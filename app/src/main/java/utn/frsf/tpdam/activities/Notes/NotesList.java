@@ -1,6 +1,8 @@
 package utn.frsf.tpdam.activities.Notes;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,12 +27,13 @@ public class NotesList {
         this.recyclerView.setAdapter(this.adapter);
     };
 
-    public View.OnClickListener onAdd(final EditText newNoteInput) {
+    public View.OnClickListener onAdd(final EditText newNoteInput, final String recordingPath, final TextView recorderText) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                adapter.onAdd(newNoteInput).onClick(v);
+                adapter.onAdd(newNoteInput,recordingPath).onClick(v);
                 recyclerView.scrollToPosition(notes.size() - 1);
+                recorderText.setVisibility(View.GONE);
             }
         };
     }

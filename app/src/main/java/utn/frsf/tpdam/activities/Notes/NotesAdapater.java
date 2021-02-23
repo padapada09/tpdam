@@ -1,5 +1,6 @@
 package utn.frsf.tpdam.activities.Notes;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +24,11 @@ public class NotesAdapater extends RecyclerView.Adapter<NotesViewHolder> {
     private NotesAdapater self = this;
     private DatabaseReference notesDatabase;
     private GoogleSignInAccount user;
+    private AppCompatActivity context;
 
     public NotesAdapater(AppCompatActivity context, ArrayList<Note> notes) {
         this.notes = notes;
+        this.context = context;
         user = GoogleSignIn.getLastSignedInAccount(context);
         if (user == null) context.startActivity(new Intent(context, Login.class));
         notesDatabase = FirebaseDatabase.getInstance().getReference("users").child(user.getId()).child("notes");
@@ -38,7 +41,7 @@ public class NotesAdapater extends RecyclerView.Adapter<NotesViewHolder> {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.note_view, parent, false);
 
-        NotesViewHolder viewHolder = new NotesViewHolder(view);
+        NotesViewHolder viewHolder = new NotesViewHolder(view,this.context);
         return viewHolder;
     }
 
@@ -64,15 +67,15 @@ public class NotesAdapater extends RecyclerView.Adapter<NotesViewHolder> {
         };
     }
 
-    public View.OnClickListener onAdd (final EditText newNoteInput) {
+    public View.OnClickListener onAdd (final EditText newNoteInput, final String recordingPath) {
         return new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String newNoteId = notesDatabase.push().getKey();
                 String newNoteMessage = newNoteInput.getText().toString();
-                Note newNote = new Note(newNoteId,newNoteMessage);
+                Note newNote = new Note(newNoteId,newNoteMessage,recordingPath);
                 notes.add(newNote);
-                notesDatabase.child(newNoteId).setValue(newNoteMessage);
+                notesDatabase.child(newNoteId).setValue(newNote);
                 self.notifyItemInserted(notes.size() - 1);
                 newNoteInput.setText("");
                 newNoteInput.clearFocus();
@@ -85,7 +88,7 @@ public class NotesAdapater extends RecyclerView.Adapter<NotesViewHolder> {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
             for (DataSnapshot data : snapshot.getChildren()) {
-                Note newNote = new Note(data.getKey(),data.getValue(String.class));
+                Note newNote = data.getValue(Note.class);
                 notes.add(newNote);
                 self.notifyItemInserted(notes.size() - 1);
             }
